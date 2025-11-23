@@ -7546,7 +7546,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [119]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Preview</span>
@@ -7575,211 +7575,73 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[119]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[31]</span><span class="ansi-green-fg">, line 15</span>
+<span class="ansi-green-fg">     12</span> csv_path = os.getenv(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">CSV_PATHNAME</span><span class="ansi-yellow-fg">"</span>) <span style="color: rgb(95,135,135)"># To avoid conflicts with different pathnames</span>
+<span class="ansi-green-fg">     14</span> <span style="color: rgb(95,135,135)"># Load data</span>
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">15</span> data = <span class="ansi-yellow-bg">pd</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">read_csv</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">csv_path</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">     17</span> data
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\MyPC\OneDrive - Dundalk Institute of Technology\Year 3\Data Science\CA1\DataSci_CA2_PairProject_2025\.venv\Lib\site-packages\pandas\io\parsers\readers.py:1026</span>, in <span class="ansi-cyan-fg">read_csv</span><span class="ansi-blue-fg">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="ansi-green-fg">   1013</span> kwds_defaults = _refine_defaults_read(
+<span class="ansi-green-fg">   1014</span>     dialect,
+<span class="ansi-green-fg">   1015</span>     delimiter,
+<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">   1022</span>     dtype_backend=dtype_backend,
+<span class="ansi-green-fg">   1023</span> )
+<span class="ansi-green-fg">   1024</span> kwds.update(kwds_defaults)
+<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1026</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">_read</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">filepath_or_buffer</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">kwds</span><span class="ansi-yellow-bg">)</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>work_year</th>
-<th>job_title</th>
-<th>job_category</th>
-<th>salary_currency</th>
-<th>salary</th>
-<th>salary_in_usd</th>
-<th>employee_residence</th>
-<th>experience_level</th>
-<th>employment_type</th>
-<th>work_setting</th>
-<th>company_location</th>
-<th>company_size</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>2023</td>
-<td>Data DevOps Engineer</td>
-<td>Data Engineering</td>
-<td>EUR</td>
-<td>88000</td>
-<td>95012</td>
-<td>Germany</td>
-<td>Mid-level</td>
-<td>Full-time</td>
-<td>Hybrid</td>
-<td>Germany</td>
-<td>L</td>
-</tr>
-<tr>
-<th>1</th>
-<td>2023</td>
-<td>Data Architect</td>
-<td>Data Architecture and Modeling</td>
-<td>USD</td>
-<td>186000</td>
-<td>186000</td>
-<td>United States</td>
-<td>Senior</td>
-<td>Full-time</td>
-<td>In-person</td>
-<td>United States</td>
-<td>M</td>
-</tr>
-<tr>
-<th>2</th>
-<td>2023</td>
-<td>Data Architect</td>
-<td>Data Architecture and Modeling</td>
-<td>USD</td>
-<td>81800</td>
-<td>81800</td>
-<td>United States</td>
-<td>Senior</td>
-<td>Full-time</td>
-<td>In-person</td>
-<td>United States</td>
-<td>M</td>
-</tr>
-<tr>
-<th>3</th>
-<td>2023</td>
-<td>Data Scientist</td>
-<td>Data Science and Research</td>
-<td>USD</td>
-<td>212000</td>
-<td>212000</td>
-<td>United States</td>
-<td>Senior</td>
-<td>Full-time</td>
-<td>In-person</td>
-<td>United States</td>
-<td>M</td>
-</tr>
-<tr>
-<th>4</th>
-<td>2023</td>
-<td>Data Scientist</td>
-<td>Data Science and Research</td>
-<td>USD</td>
-<td>93300</td>
-<td>93300</td>
-<td>United States</td>
-<td>Senior</td>
-<td>Full-time</td>
-<td>In-person</td>
-<td>United States</td>
-<td>M</td>
-</tr>
-<tr>
-<th>...</th>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr>
-<th>9350</th>
-<td>2021</td>
-<td>Data Specialist</td>
-<td>Data Management and Strategy</td>
-<td>USD</td>
-<td>165000</td>
-<td>165000</td>
-<td>United States</td>
-<td>Senior</td>
-<td>Full-time</td>
-<td>Remote</td>
-<td>United States</td>
-<td>L</td>
-</tr>
-<tr>
-<th>9351</th>
-<td>2020</td>
-<td>Data Scientist</td>
-<td>Data Science and Research</td>
-<td>USD</td>
-<td>412000</td>
-<td>412000</td>
-<td>United States</td>
-<td>Senior</td>
-<td>Full-time</td>
-<td>Remote</td>
-<td>United States</td>
-<td>L</td>
-</tr>
-<tr>
-<th>9352</th>
-<td>2021</td>
-<td>Principal Data Scientist</td>
-<td>Data Science and Research</td>
-<td>USD</td>
-<td>151000</td>
-<td>151000</td>
-<td>United States</td>
-<td>Mid-level</td>
-<td>Full-time</td>
-<td>Remote</td>
-<td>United States</td>
-<td>L</td>
-</tr>
-<tr>
-<th>9353</th>
-<td>2020</td>
-<td>Data Scientist</td>
-<td>Data Science and Research</td>
-<td>USD</td>
-<td>105000</td>
-<td>105000</td>
-<td>United States</td>
-<td>Entry-level</td>
-<td>Full-time</td>
-<td>Remote</td>
-<td>United States</td>
-<td>S</td>
-</tr>
-<tr>
-<th>9354</th>
-<td>2020</td>
-<td>Business Data Analyst</td>
-<td>Data Analysis</td>
-<td>USD</td>
-<td>100000</td>
-<td>100000</td>
-<td>United States</td>
-<td>Entry-level</td>
-<td>Contract</td>
-<td>Remote</td>
-<td>United States</td>
-<td>L</td>
-</tr>
-</tbody>
-</table>
-<p>9355 rows × 12 columns</p>
-</div>
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\MyPC\OneDrive - Dundalk Institute of Technology\Year 3\Data Science\CA1\DataSci_CA2_PairProject_2025\.venv\Lib\site-packages\pandas\io\parsers\readers.py:620</span>, in <span class="ansi-cyan-fg">_read</span><span class="ansi-blue-fg">(filepath_or_buffer, kwds)</span>
+<span class="ansi-green-fg">    617</span> _validate_names(kwds.get(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">names</span><span class="ansi-yellow-fg">"</span>, <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>))
+<span class="ansi-green-fg">    619</span> <span style="color: rgb(95,135,135)"># Create the parser.</span>
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">620</span> parser = <span class="ansi-yellow-bg">TextFileReader</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">filepath_or_buffer</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwds</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    622</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> chunksize <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> iterator:
+<span class="ansi-green-fg">    623</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> parser
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\MyPC\OneDrive - Dundalk Institute of Technology\Year 3\Data Science\CA1\DataSci_CA2_PairProject_2025\.venv\Lib\site-packages\pandas\io\parsers\readers.py:1620</span>, in <span class="ansi-cyan-fg">TextFileReader.__init__</span><span class="ansi-blue-fg">(self, f, engine, **kwds)</span>
+<span class="ansi-green-fg">   1617</span>     <span style="color: rgb(0,135,0)">self</span>.options[<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">has_index_names</span><span class="ansi-yellow-fg">"</span>] = kwds[<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">has_index_names</span><span class="ansi-yellow-fg">"</span>]
+<span class="ansi-green-fg">   1619</span> <span style="color: rgb(0,135,0)">self</span>.handles: IOHandles | <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> = <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
+<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1620</span> <span style="color: rgb(0,135,0)">self</span>._engine = <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_make_engine</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">f</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">engine</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\MyPC\OneDrive - Dundalk Institute of Technology\Year 3\Data Science\CA1\DataSci_CA2_PairProject_2025\.venv\Lib\site-packages\pandas\io\parsers\readers.py:1880</span>, in <span class="ansi-cyan-fg">TextFileReader._make_engine</span><span class="ansi-blue-fg">(self, f, engine)</span>
+<span class="ansi-green-fg">   1878</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">b</span><span class="ansi-yellow-fg">"</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> mode:
+<span class="ansi-green-fg">   1879</span>         mode += <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">b</span><span class="ansi-yellow-fg">"</span>
+<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1880</span> <span style="color: rgb(0,135,0)">self</span>.handles = <span class="ansi-yellow-bg">get_handle</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-fg">   1881</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">f</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1882</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">mode</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1883</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">options</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">encoding</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">None</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1884</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">compression</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">options</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">compression</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">None</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1885</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">memory_map</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">options</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">memory_map</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">False</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1886</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">is_text</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">is_text</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1887</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">errors</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">options</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">encoding_errors</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">strict</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1888</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">storage_options</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">options</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">storage_options</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">None</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1889</span> <span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">   1890</span> <span class="ansi-bold" style="color: rgb(0,135,0)">assert</span> <span style="color: rgb(0,135,0)">self</span>.handles <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
+<span class="ansi-green-fg">   1891</span> f = <span style="color: rgb(0,135,0)">self</span>.handles.handle
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\MyPC\OneDrive - Dundalk Institute of Technology\Year 3\Data Science\CA1\DataSci_CA2_PairProject_2025\.venv\Lib\site-packages\pandas\io\common.py:873</span>, in <span class="ansi-cyan-fg">get_handle</span><span class="ansi-blue-fg">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="ansi-green-fg">    868</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">isinstance</span>(handle, <span style="color: rgb(0,135,0)">str</span>):
+<span class="ansi-green-fg">    869</span>     <span style="color: rgb(95,135,135)"># Check whether the filename is to be opened in binary mode.</span>
+<span class="ansi-green-fg">    870</span>     <span style="color: rgb(95,135,135)"># Binary mode does not support 'encoding' and 'newline'.</span>
+<span class="ansi-green-fg">    871</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> ioargs.encoding <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">b</span><span class="ansi-yellow-fg">"</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> ioargs.mode:
+<span class="ansi-green-fg">    872</span>         <span style="color: rgb(95,135,135)"># Encoding</span>
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">873</span>         handle = <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">open</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-fg">    874</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">handle</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    875</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">ioargs</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">mode</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    876</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">ioargs</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    877</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">errors</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">errors</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    878</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">newline</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    879</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    880</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
+<span class="ansi-green-fg">    881</span>         <span style="color: rgb(95,135,135)"># Binary mode</span>
+<span class="ansi-green-fg">    882</span>         handle = <span style="color: rgb(0,135,0)">open</span>(handle, ioargs.mode)
+
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: 'C:/Users/MyPC/OneDrive - Dundalk Institute of Technology/Year 3/Data Science/CA1/DataSci_CA2_PairProject_2025/jobs_data.csv'</pre>
 </div>
 </div>
 </div>
@@ -7789,7 +7651,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [120]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Describe all fields in the data</span>
@@ -7868,7 +7730,7 @@ max    2023.000000  450000.000000  450000.000000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [121]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Print all fields and sum of any missing values in their respective column</span>
@@ -7891,7 +7753,7 @@ max    2023.000000  450000.000000  450000.000000
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[121]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>work_year             0
 job_title             0
@@ -7952,7 +7814,7 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [122]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Describe data again to remind ourselves</span>
@@ -7993,7 +7855,7 @@ memory usage: 877.2+ KB
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[122]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8233,7 +8095,7 @@ memory usage: 877.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [123]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Histogram of numeric columns</span>
@@ -8264,7 +8126,7 @@ memory usage: 877.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [124]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Boxplots of numeric columns</span>
@@ -8298,7 +8160,7 @@ memory usage: 877.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [125]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Categorical columns analysis</span>
@@ -8437,7 +8299,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [126]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Get fields with few unique values (&lt; 15)</span>
@@ -8471,7 +8333,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [127]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">18</span><span class="p">))</span>
@@ -8530,7 +8392,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [128]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Compare salary against every categorical category, except job_title and company_location</span>
@@ -8582,7 +8444,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [129]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span> 
@@ -8638,7 +8500,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [130]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Multivariate for all numeric columns</span>
@@ -8669,7 +8531,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [131]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Visualise pairwise relationships</span>
@@ -8697,7 +8559,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [132]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># salary_in_use vs job_category split by experience_level</span>
@@ -8726,7 +8588,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [133]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># salary vs company_size split by work_setting</span>
@@ -8754,7 +8616,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [134]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Average salary_in_usd by company_size and experience_level</span>
@@ -8769,7 +8631,7 @@ Name: count, dtype: int64
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[134]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8836,7 +8698,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [135]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plot above as a heatmap</span>
@@ -8903,7 +8765,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [136]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 2: Drop variables not useful for modeling </span>
@@ -8940,7 +8802,7 @@ Name: count, dtype: int64
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[136]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9049,7 +8911,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [137]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Step 5: Importance &amp; Multicolinearity </span>
@@ -9185,7 +9047,7 @@ company_size_code               1.000000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [138]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
@@ -9202,7 +9064,7 @@ company_size_code               1.000000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [139]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Predictors and response</span>
@@ -9245,7 +9107,7 @@ length of Test Set: 1871
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [140]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Using regressor as response is numerical</span>
@@ -9285,7 +9147,7 @@ length of Test Set: 1871
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [141]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
@@ -9368,7 +9230,7 @@ R^2 Score: 0.3112107393309933
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [142]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
@@ -9469,7 +9331,7 @@ Final Model Summary:
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[142]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <table class="simpletable">
 <caption>OLS Regression Results</caption>
@@ -9573,7 +9435,7 @@ Final Model Summary:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [143]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
@@ -9655,7 +9517,7 @@ Final Model Summary:
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[143]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <table class="simpletable">
 <caption>OLS Regression Results</caption>
@@ -9747,7 +9609,7 @@ Final Model Summary:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [144]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Stepwise Forward and Backward Model Comparison</span>
@@ -9892,7 +9754,7 @@ Backward Elimination is slightly better based on Adjusted R^2 and statistical si
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [145]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
@@ -9986,7 +9848,7 @@ dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [146]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Evaluate the final model on the TEST set</span>
@@ -10052,7 +9914,7 @@ RMSE: 55449.23 USD
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [147]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -10206,115 +10068,51 @@ RMSE: 55449.23 USD
 <li><p>Overall, the results suggest that salary depends on more detailed information than the fields we currently have from the Kaggle dataset, and that a single decision tree may not be strong enough to capture all the complexity. More advanced models that we have not learnt yet will definitely improve prediction accuracy.</p>
 </li>
 </ul>
-<h4 id="Feature-Engineering">Feature Engineering<a class="anchor-link" href="#Feature-Engineering">¶</a></h4><ul>
-<li><p>Data Cleaning:</p>
-<ul>
-<li>The dataset contained no missing values, so no imputation was required.</li>
-</ul>
-</li>
-<li><p>Variable Reduction:</p>
-<ul>
-<li><p>Removed variables that were not useful for prediction or duplicated information:</p>
-</li>
-<li><p>salary_currency, job_title, salary, employee_residence</p>
-</li>
-</ul>
-</li>
-<li><p>Categorical Consolidation:</p>
-<ul>
-<li><p>company_location was simplified by grouping all but the top 6 most frequent locations into an “Other” category.</p>
-</li>
-<li><p>Reduced noise and improved model generalization.</p>
-</li>
+<h4 id="Feature-Engineering">Feature Engineering<a class="anchor-link" href="#Feature-Engineering">¶</a></h4><h5 id="Data-Cleaning:">Data Cleaning:<a class="anchor-link" href="#Data-Cleaning:">¶</a></h5><pre><code>- The dataset contained no missing values, so no imputation was required.</code></pre>
+<h5 id="Variable-Reduction:">Variable Reduction:<a class="anchor-link" href="#Variable-Reduction:">¶</a></h5><pre><code>- Removed variables that were not useful for prediction or duplicated information:
+- These included: salary_currency, job_title, salary, employee_residence.</code></pre>
+<h5 id="Categorical-Consolidation:">Categorical Consolidation:<a class="anchor-link" href="#Categorical-Consolidation:">¶</a></h5><pre><code>- company_location was simplified by grouping all but the top 6 most frequent locations into an “Other” category. Reduced noise and improved model .generalization.</code></pre>
+<h5 id="Encoding:">Encoding:<a class="anchor-link" href="#Encoding:">¶</a></h5><ul>
+<li>All remaining categorical variables were converted to numeric category codes for modelling:<ul>
+<li>company_location_code</li>
+<li>job_category_code</li>
+<li>experience_level_code</li>
+<li>employment_type_code</li>
+<li>work_setting_code</li>
+<li>company_size_code</li>
 </ul>
 </li>
 </ul>
-<p>Encoding:</p>
-<ul>
-<li><p>All remaining categorical variables were converted to numeric category codes for modelling:</p>
-<ul>
-<li><p>company_location_code</p>
-</li>
-<li><p>job_category_code</p>
-</li>
-<li><p>experience_level_code</p>
-</li>
-<li><p>employment_type_code</p>
-</li>
-<li><p>work_setting_code</p>
-</li>
-<li><p>company_size_code</p>
-</li>
-</ul>
-</li>
-<li><p>Final Feature Set for Modelling:</p>
-<ul>
-<li>After preprocessing, the dataset contained a clean, numeric set of predictors suitable for regression analysis and machine learning.</li>
-</ul>
-</li>
-<li><p>Conclusion:</p>
-<ul>
-<li>Feature engineering successfully transformed complex raw categorical data into a structured, modelling-ready format while reducing dimensionality and preventing overfitting.</li>
-</ul>
-</li>
-</ul>
-<h4 id="Regression-Modelling">Regression Modelling<a class="anchor-link" href="#Regression-Modelling">¶</a></h4><p>Decision Tree Regression</p>
-<ul>
-<li><p>A Decision Tree Regressor (max_depth=6) was trained to explore nonlinear relationships.</p>
-</li>
-<li><p>The model showed clear splits primarily based on:</p>
-</li>
-<li><p>experience_level_code</p>
-</li>
-<li><p>job_category_code</p>
-</li>
-<li><p>However, predictive accuracy was moderate, with noticeable variance around predictions.</p>
-</li>
-</ul>
-<p>Stepwise Linear Regression (Forward vs Backward):</p>
-<ul>
-<li><p>Both forward and backward stepwise selection were performed to identify the most significant predictors.</p>
-</li>
-<li><p>Backward Elimination Selected the Best Model</p>
+<h5 id="Final-Feature-Set-for-Modelling:">Final Feature Set for Modelling:<a class="anchor-link" href="#Final-Feature-Set-for-Modelling:">¶</a></h5><pre><code>- After preprocessing, the dataset contained a clean, numeric set of predictors suitable for regression analysis and machine learning.</code></pre>
+<h5 id="Conclusion:">Conclusion:<a class="anchor-link" href="#Conclusion:">¶</a></h5><pre><code>- Feature engineering successfully transformed complex raw categorical data into a structured, modelling-ready format while reducing dimensionality and preventing overfitting.</code></pre>
+<h4 id="Regression-Modelling">Regression Modelling<a class="anchor-link" href="#Regression-Modelling">¶</a></h4><h5 id="Stepwise-Linear-Regression-(Forward-vs-Backward):">Stepwise Linear Regression (Forward vs Backward):<a class="anchor-link" href="#Stepwise-Linear-Regression-(Forward-vs-Backward):">¶</a></h5><ul>
+<li><p>Both forward and backward stepwise selection were performed to identify the most significant predictors. Backward Elimination Selected the Best Model.</p>
 </li>
 <li><p>Final variables selected (all statistically significant, p &lt; 0.05):</p>
 <ul>
-<li><p>work_year</p>
-</li>
-<li><p>company_location_code</p>
-</li>
-<li><p>job_category_code</p>
-</li>
-<li><p>experience_level_code</p>
-</li>
-<li><p>company_size_code</p>
+<li>work_year</li>
+<li>company_location_code</li>
+<li>job_category_code</li>
+<li>experience_level_code</li>
+<li>company_size_code</li>
+</ul>
 </li>
 <li><p>Removed due to insignificance:</p>
-</li>
-<li><p>employment_type_code</p>
-</li>
-<li><p>work_setting_code</p>
-</li>
-</ul>
-</li>
-<li><p>Model Performance:</p>
 <ul>
-<li>Adjusted R^2 ≈ 0.211 for both forward and backward models</li>
-</ul>
-</li>
-<li><p>Backward was preferred because:</p>
-<ul>
-<li>It used fewer predictors</li>
-</ul>
-</li>
-<li><p>All included predictors were statistically significant:</p>
-<ul>
-<li>It produced a more parsimonious, interpretable model</li>
+<li>employment_type_code</li>
+<li>work_setting_code</li>
 </ul>
 </li>
 </ul>
-<p>Test Set Evaluation</p>
-<ul>
+<h5 id="Model-Performance:">Model Performance:<a class="anchor-link" href="#Model-Performance:">¶</a></h5><ul>
+<li><p>Adjusted R^2 ≈ 0.211 for both forward and backward models</p>
+</li>
+<li><p>Backward was preferred because It used fewer predictors</p>
+</li>
+<li><p>All included predictors were statistically significant</p>
+</li>
+</ul>
+<h5 id="Test-Set-Evaluation">Test Set Evaluation<a class="anchor-link" href="#Test-Set-Evaluation">¶</a></h5><ul>
 <li><p>Using the final backward-elimination model:</p>
 <ul>
 <li><p>MAE: ~ (39,011)</p>
@@ -10338,69 +10136,42 @@ RMSE: 55449.23 USD
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Highlight-key-visualizations-that-support-findings.">Highlight key visualizations that support findings.<a class="anchor-link" href="#Highlight-key-visualizations-that-support-findings.">¶</a></h2><p>Feature Engineering</p>
-<ul>
-<li><p>Histograms &amp; Boxplots of Numeric Variables</p>
-<ul>
-<li><p>Histograms of salary and salary_in_usd showed right-skewed distributions with outliers, indicating wide variation in compensation.</p>
+<h2 id="Highlight-key-visualizations-that-support-findings.">Highlight key visualizations that support findings.<a class="anchor-link" href="#Highlight-key-visualizations-that-support-findings.">¶</a></h2><h3 id="Feature-Engineering">Feature Engineering<a class="anchor-link" href="#Feature-Engineering">¶</a></h3><h4 id="Histograms-&amp;-Boxplots-of-Numeric-Variables:">Histograms &amp; Boxplots of Numeric Variables:<a class="anchor-link" href="#Histograms-&amp;-Boxplots-of-Numeric-Variables:">¶</a></h4><ul>
+<li><p>Salary and salary_in_usd showed strong right-skew and high outliers.</p>
 </li>
-<li><p>Boxplots reinforced this, highlighting extreme salaries across job categories and experience levels.</p>
+<li><p>Boxplots across categories (experience, job type) revealed wide salary dispersion.</p>
 </li>
-<li><p>Insight: Confirmed the need to preprocess categorical variables and anticipate moderate model prediction accuracy.</p>
+<li><p>Insight: Confirmed salary variability and justified simplifying categories and expectations of moderate predictive accuracy.</p>
 </li>
 </ul>
+<h4 id="Bar-Charts-of-Categorical-Variables:">Bar Charts of Categorical Variables:<a class="anchor-link" href="#Bar-Charts-of-Categorical-Variables:">¶</a></h4><ul>
+<li><p>Displayed dominant classes (e.g., full-time jobs, U.S. locations, senior workers).</p>
 </li>
-<li><p>Bar Charts of Categorical Variables</p>
-<ul>
-<li><p>Plots of job_category, experience_level, company_size, and work_setting revealed dominant categories and justified grouping:</p>
-</li>
-<li><p>company_location reduced to top 6 + “Other” to avoid sparsity.</p>
-</li>
-<li><p>Insight: Supported encoding categorical variables into numeric codes and reducing noise for regression models.</p>
+<li><p>Insight: Supported encoding decisions and highlighted imbalance in several predictors.</p>
 </li>
 </ul>
+<h3 id="Regression-Modelling">Regression Modelling<a class="anchor-link" href="#Regression-Modelling">¶</a></h3><h4 id="Correlation-Heatmap">Correlation Heatmap<a class="anchor-link" href="#Correlation-Heatmap">¶</a></h4><ul>
+<li><p>Identified moderate relationships between salary and experience, job category, company size, and location.</p>
 </li>
-<li><p>Correlation Heatmap</p>
-<ul>
-<li><p>Showed moderate correlation between salary_in_usd and features like experience_level_code, job_category_code, and company_size_code.</p>
-</li>
-<li><p>Insight: Guided selection of predictors for regression modelling.</p>
+<li><p>Insight: Guided variable selection for regression.</p>
 </li>
 </ul>
+<h4 id="Salary-vs-Categorical-Boxplots">Salary vs Categorical Boxplots<a class="anchor-link" href="#Salary-vs-Categorical-Boxplots">¶</a></h4><ul>
+<li><p>Clear median salary differences across job category, experience level, and company size.</p>
+</li>
+<li><p>Insight: Reinforced inclusion of these variables in final regression model.</p>
 </li>
 </ul>
-<p>Regression Modelling</p>
-<ul>
-<li><p>Predicted vs Actual Salary Plot</p>
-<ul>
-<li><p>Scatter around the diagonal line showed the model captures general salary trends but has high variance</p>
+<h4 id="Predicted-vs-Actual-Scatterplot">Predicted vs Actual Scatterplot<a class="anchor-link" href="#Predicted-vs-Actual-Scatterplot">¶</a></h4><ul>
+<li><p>Wide dispersion around the diagonal line.</p>
 </li>
-<li><p>Insight: Explains moderate MAE (~39,000 USD) and RMSE (~51,000 USD).</p>
+<li><p>Insight: Model captures direction/trends but not exact salary values.</p>
 </li>
 </ul>
+<h4 id="Residual-Error-Plots">Residual Error Plots<a class="anchor-link" href="#Residual-Error-Plots">¶</a></h4><ul>
+<li><p>Residuals centered around zero but with high variance.</p>
 </li>
-<li><p>Error Plots vs Key Predictors</p>
-<ul>
-<li><p>Errors plotted against work_year, experience_level_code, and company_location_code were centered around zero.</p>
-</li>
-<li><p>No obvious bias, but large spread remains due to unobserved factors (skills, negotiations, industry).</p>
-</li>
-<li><p>Insight: Confirms regression model is unbiased but inherently limited in precise prediction.</p>
-</li>
-</ul>
-</li>
-<li><p>Stepwise Regression Summary</p>
-<ul>
-<li><p>Forward &amp; Backward stepwise regression visualized adjusted R^2 progression.</p>
-</li>
-<li><p>Backward elimination selected 5 statistically significant variables:</p>
-<ul>
-<li>work_year, company_location_code, job_category_code, experience_level_code, company_size_code</li>
-</ul>
-</li>
-<li><p>Insight: Clearly demonstrates that the model becomes simpler and more interpretable without sacrificing its ability to predict salaries accurately.</p>
-</li>
-</ul>
+<li><p>Insight: Model is unbiased but limited by missing explanatory factors.</p>
 </li>
 </ul>
 </div>
